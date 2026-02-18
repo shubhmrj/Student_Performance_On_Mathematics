@@ -3,7 +3,7 @@ import pandas as pd
 
 from src.exception import CustomException
 from src.utils import load_object
-
+import os
 
 class PredictPipeline:
     def __init__(self):
@@ -20,7 +20,7 @@ class PredictPipeline:
             preprocessor = load_object(file_path=preprocessor_path)
             print("After Loading")
             
-            data_scaled = preprocessor.tranform(features)
+            data_scaled = preprocessor.transform(features)
             preds = model.predict(data_scaled)
             
             return preds
