@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
 <body>
     <div class="login">
        <h1>Student Exam Performance Indicator</h1>
@@ -108,4 +108,117 @@
        THE  prediction is {{results}}
     </h2>
    <body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Predictor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 min-h-screen flex items-center justify-center p-6">
+
+<div class="bg-white shadow-2xl rounded-2xl w-full max-w-4xl p-8">
+
+    <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">
+        🎓 Student Exam Performance Predictor
+    </h1>
+
+   <form action="{{ url_for('predict_datapoint')}}" method="post" class="grid md:grid-cols-2 gap-6">
+
+        <!-- Gender -->
+        <div>
+            <label class="block text-gray-700 font-semibold mb-2">Gender</label>
+            <select name="gender" required class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-400">
+                <option disabled selected value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+
+        <!-- Ethnicity -->
+        <div>
+            <label class="block text-gray-700 font-semibold mb-2">Race / Ethnicity</label>
+            <select name="ethnicity" required class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-400">
+                <option disabled selected value="">Select Ethnicity</option>
+                <option value="group A">Group A</option>
+                <option value="group B">Group B</option>
+                <option value="group C">Group C</option>
+                <option value="group D">Group D</option>
+                <option value="group E">Group E</option>
+            </select>
+        </div>
+
+        <!-- Parent Education -->
+        <div>
+            <label class="block text-gray-700 font-semibold mb-2">Parental Education</label>
+            <select name="parental_level_of_education" required class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-400">
+                <option disabled selected value="">Select Education</option>
+                <option value="associate's degree">Associate's Degree</option>
+                <option value="bachelor's degree">Bachelor's Degree</option>
+                <option value="high school">High School</option>
+                <option value="master's degree">Master's Degree</option>
+                <option value="some college">Some College</option>
+                <option value="some high school">Some High School</option>
+            </select>
+        </div>
+
+        <!-- Lunch -->
+        <div>
+            <label class="block text-gray-700 font-semibold mb-2">Lunch Type</label>
+            <select name="lunch" required class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-400">
+                <option disabled selected value="">Select Lunch Type</option>
+                <option value="free/reduced">Free / Reduced</option>
+                <option value="standard">Standard</option>
+            </select>
+        </div>
+
+        <!-- Test Preparation -->
+        <div>
+            <label class="block text-gray-700 font-semibold mb-2">Test Preparation Course</label>
+            <select name="test_preparation_course" required class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-400">
+                <option disabled selected value="">Select Course</option>
+                <option value="none">None</option>
+                <option value="completed">Completed</option>
+            </select>
+        </div>
+
+        <!-- Reading Score -->
+        <div>
+            <label class="block text-gray-700 font-semibold mb-2">Reading Score (0–100)</label>
+            <input type="number" name="reading_score" min="0" max="100" required
+                   class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-400"
+                   placeholder="Enter Reading Score">
+        </div>
+
+        <!-- Writing Score -->
+        <div>
+            <label class="block text-gray-700 font-semibold mb-2">Writing Score (0–100)</label>
+            <input type="number" name="writing_score" min="0" max="100" required
+                   class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-400"
+                   placeholder="Enter Writing Score">
+        </div>
+
+        <!-- Submit Button -->
+        <div class="md:col-span-2 text-center">
+            <button type="submit"
+                    class="bg-indigo-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-indigo-700 transition duration-300 shadow-md">
+                Predict Maths Score
+            </button>
+        </div>
+    </form>
+
+    <!-- Result Section -->
+    {% if results %}
+    <div class="mt-8 bg-gradient-to-r from-green-400 to-blue-500 text-white p-6 rounded-xl shadow-lg text-center">
+        <h2 class="text-xl font-semibold">Predicted Maths Score</h2>
+        <p class="text-4xl font-bold mt-2">{{ results }}</p>
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
 </html>
