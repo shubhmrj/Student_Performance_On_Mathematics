@@ -3,8 +3,6 @@ numpy
 seaborn
 matplotlib
 scikit-learn
-catboost==1.2.5
-xgboost==2.0.3
 Flask
 gunicorn
 dill
