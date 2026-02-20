@@ -1,1 +1,76 @@
-<h1>Welcome to the home page</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Analyzer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white">
+
+<!-- Navbar -->
+<nav class="flex justify-between items-center px-8 py-4">
+    <h1 class="text-2xl font-bold"> EduPredict</h1>
+</nav>
+
+<!-- Hero Section -->
+<section class="flex flex-col items-center justify-center text-center px-6 py-24">
+    <h2 class="text-5xl font-extrabold leading-tight mb-6">
+        Predict Student Performance <br> Using Machine Learning
+    </h2>
+
+    <p class="text-lg max-w-2xl mb-8 text-gray-200">
+        Our intelligent ML system analyzes student background, preparation,
+        and scores to accurately predict maths performance.
+    </p>
+
+    <a href="/predictdata"
+       class="bg-white text-indigo-700 px-8 py-4 rounded-xl text-lg font-bold shadow-lg hover:scale-105 transition transform duration-300">
+        Start Prediction 
+    </a>
+</section>
+
+<!-- Features Section -->
+<section class="bg-white text-gray-800 py-16 px-8 rounded-t-3xl">
+
+    <h3 class="text-3xl font-bold text-center mb-12">
+        Why Use Our System?
+    </h3>
+
+    <div class="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+
+        <div class="p-6 shadow-xl rounded-xl hover:shadow-2xl transition">
+            <h4 class="text-xl font-semibold mb-4">📊 Data Driven</h4>
+            <p>
+                Built using real student performance datasets and
+                advanced machine learning algorithms.
+            </p>
+        </div>
+
+        <div class="p-6 shadow-xl rounded-xl hover:shadow-2xl transition">
+            <h4 class="text-xl font-semibold mb-4">⚡ Fast Prediction</h4>
+            <p>
+                Get instant results based on student academic indicators
+                and background factors.
+            </p>
+        </div>
+
+        <!-- <div class="p-6 shadow-xl rounded-xl hover:shadow-2xl transition">
+            <h4 class="text-xl font-semibold mb-4">🎯 High Accuracy</h4>
+            <p>
+                Trained with optimized ML models like XGBoost and
+                CatBoost for better prediction accuracy.
+            </p>
+        </div> -->
+
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center py-6 bg-gray-900 text-gray-400">
+    © 2026 Student Performance Analyzer
+</footer>
+
+</body>
+</html>
